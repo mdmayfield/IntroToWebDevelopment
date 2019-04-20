@@ -11,12 +11,63 @@
 
   <body>
     <header>
-      <h1>Contact</h1>
+      <h1>Contact Me</h1>
+      <hr />
     </header>
 
     <nav>
-      <a href="index.html"><img src="images/morpho.jpg" /></a>
+      <p><a href="index.html">Home</a></p>
+      <hr />
     </nav>
+
+    <h2>Information Request</h2>
+    <form action="submit.html" method="POST">
+      <label for="firstName">First Name:</label><br />
+      <input type="text" id="firstName" name="firstName"><br />
+
+      <label for="lastName">Last Name:</label><br />
+      <input type="text" id="lastName" name="lastName"><br />
+
+      <label for="phone">Phone Number (please spell in words):</label><br />
+      <input type="text" id="phone" name="phone"><br />
+
+      <label for="contact">Best time to call:</label><br />
+      <select id="contact" name="contact">
+        <option value="default" selected>--Select One--</option>
+        <option value="triassic">Triassic Era (200+ million years ago)</option>
+        <option value="jurassic">Jurassic Era (145 - 200 million years ago)</option>
+        <option value="cretaceous">Cretaceous Era (less than 145 million years ago)</option>
+      </select>
+
+      <fieldset>
+        <legend>I am interested in (check all that apply):</legend><br />
+
+        <input type="checkbox" id="basketWeaving" name="interest" value="basketWeaving">
+        <label for="basketWeaving">Underwater Basket Weaving</label><br />
+
+        <input type="checkbox" id="timeTravel" name="interest" value="timeTravel">
+        <label for="timeTravel">Polaroid-Assisted Time Travel</label><br />
+
+        <input type="checkbox" id="quidditchLessons" name="interest" value="quidditchLessons">
+        <label for="quidditchLessons">Quidditch Lessons</label><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>I am open to receiving spam:</legend>
+
+        <input type="radio" id="choice1" name="questionnaire" value="yes">
+        <label for="choice1">Yes</label><br />
+
+        <input type="radio" id="choice2" name="questionnaire" value="heckYes">
+        <label for="choice2">Heck Yes</label><br />
+      </fieldset>
+
+      <label for="info">Additional Information And/Or Short Fiction:</label><br />
+      <textarea id="info" name="info"></textarea>
+
+      <input type="submit" name="submit" value="Submit">
+
+    <hr />
 
     <footer>
 
