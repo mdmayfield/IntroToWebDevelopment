@@ -118,6 +118,15 @@ nav a {
   float: left;
 }
 
+nav a:visited {
+  color: #e4c3ad; 
+}
 
+nav a:hover {
+  background-color: #fef9ff;
+  color: #5b7d87; 
+}
 
-
+nav a:active {
+  font-weight: bold;
+}
