@@ -93,8 +93,14 @@ article img {
 
 .right-content {
   float:left;
+  max-width:620px;
 }
 
 article {
   margin-bottom: 16px;
+}
+
+article p {
+  margin-left: 30px;
+  margin-top: 0;
 }
