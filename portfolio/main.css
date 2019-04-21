@@ -104,3 +104,20 @@ article p {
   margin-left: 30px;
   margin-top: 0;
 }
+
+nav a {
+  background-color: #5b7d87;
+  color: #fef9ff;
+  padding: 8px;
+  border: thin solid #0d1f2d;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: 20px;
+  width: 100px;
+  float: left;
+}
+
+
+
+
