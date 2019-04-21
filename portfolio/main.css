@@ -8,6 +8,8 @@ body {
   background-color: #fef9ff;
   font-family: arial, helvetica, sans-serif;
   color: #0d1f2d;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 header, footer {
@@ -80,3 +82,19 @@ textarea {
   resize: none;
 }
 
+.clear-float {
+  clear:both;
+}
+
+article img {
+  float:left;
+  width:200px;
+}
+
+.right-content {
+  float:left;
+}
+
+article {
+  margin-bottom: 16px;
+}
