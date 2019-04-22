@@ -1,5 +1,5 @@
-var n = 25;
-var result = 0;
+var n = Number(prompt("Please enter an integer to assign to n:", "25"));
+var result = Number(prompt("Please enter an integer to assign to result:", "0"));
 
 document.write("<p>Before discombobulation and transmogrification, the value of <b>n</b> is " + n + " and the value of <b>result</b> is " + result + ".</p>");
 
