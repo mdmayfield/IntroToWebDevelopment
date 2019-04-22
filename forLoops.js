@@ -1,7 +1,7 @@
 var n;
 var sum = 0;
 
-while (!Number(n)) {
+while (isNaN(n)) {
   n = Number(prompt("Please enter a number to assign to n:", "25"));
 }
 
