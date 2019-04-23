@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <!--meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/JavaScript" src="displayEvens.js"></script>
 
     <title>A Web Page</title>
 
@@ -19,7 +20,7 @@
     
     <div class="container">
       <h1>Now You Literally CAN Even!</h1>
-      <form>
+      <form name="numberSelector" onsubmit="return displayEvens();">
         <div class="form-group">
           <label for="startingNumber">Starting Number</label>
           <input type="number" class="form-control" id="startingNumber" placeholder="4">
@@ -34,6 +35,13 @@
         </div>
         <button type="submit" class="btn btn-primary">Display Evens</button>
       </form>
+
+      <div style="display: none" id="result">
+        <h3 id="resultDesc"></h3>
+        <table id="resultTable">
+        </table>
+      </div>
+
     </div>
 
     <!--Bootstrap CDN, https://getbootstrap.com/docs/4.1/getting-started/download/-->
