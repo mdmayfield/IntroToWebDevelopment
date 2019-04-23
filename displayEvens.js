@@ -64,7 +64,7 @@ function displayEvens() {
   for (var i = Number(startingNumber);
        i <= Number(endingNumber);
        i += Number(step)) {
-    if (i % 2) {
+    if (!(i % 2)) {
       var newRow = resultTable.insertRow();
       var newCell = newRow.insertCell();
       newCell.innerHTML = String(i);
@@ -73,7 +73,9 @@ function displayEvens() {
   }
 
   if (!anyMatches) {
-    resultTable.insertRow().insertCell().innerHTML="None";
+    var newRow = resultTable.insertRow();
+    var newCell = newRow.insertCell()
+    newCell.innerHTML="None";
   }
 
   return false;
