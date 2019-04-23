@@ -10,6 +10,10 @@ function clearErrors() {
   }
 }
 
+function clearTable() {
+  /* TODO */
+}
+
 function displayEvens() {
   clearErrors();
   var startingNumber = document.forms["numberSelector"]["startingNumber"].value;
@@ -43,6 +47,8 @@ function displayEvens() {
     return false;
   }
 
+  clearTable();
+
   document.getElementById("result").style.display = "block";
   document.getElementById("resultDesc").innerText = "Here are the even "
   + "numbers between " + startingNumber + " and " + endingNumber
@@ -55,9 +61,17 @@ function displayEvens() {
   for (var i = Number(startingNumber);
        i <= Number(endingNumber);
        i += Number(step)) {
-    console.log(i + " ");
+    if (i % 2) {
+      var newRow = resultTable.insertRow();
+      var newCell = newRow.insertCell();
+      newCell.innerHTML = String(i);
+      anyMatches = true;
+    }
   }
 
+  if (!anyMatches) {
+    resultTable.insertRow().insertCell().innerHTML="None";
+  }
 
   return false;
 }
