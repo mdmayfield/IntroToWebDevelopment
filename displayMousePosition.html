@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="displayMousePosition.js">
+    </script>
+  </head>
+
+  <body onclick="toggleTracking();" onmousemove="updateMousePosition();">
+    <h1>Display the Mouse Position</h1>
+    <p>Step right up, step right up, and CLICK anywhere on this page to toggle
+       the AMAZING TRACKER-MOUSE!!!</p>
+    <hr />
+    <div>
+      Mouse tracking: <span id="trackingStatus">OUT OF LUCK LOSER</span>
+    </div>
+    <fieldset>
+      <label>Mouse X:</label><label id="mousePositionX"></label>
+      <label>Mouse Y:</label><label id="mousePositionY"></label>
+    </fieldset>
+  </body>
+</html>
+
