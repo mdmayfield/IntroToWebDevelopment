@@ -48,15 +48,16 @@ function displayEvens() {
   + "numbers between " + startingNumber + " and " + endingNumber
   + " by " + step + "'s:";
 
-  var tableGen = "";
+  /* apparently JS can pass by reference? */
+  var resultTable = document.getElementById("resultTable");
+  var anyMatches = false;
 
-  /* TODO: calculate here */
-
-  if (tableGen == "") {
-    tableGen = "<tr>None</tr>";
+  for (var i = Number(startingNumber);
+       i <= Number(endingNumber);
+       i += Number(step)) {
+    console.log(i + " ");
   }
 
-  document.getElementById("resultTable").innerText = tableGen;
 
   return false;
 }
