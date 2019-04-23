@@ -29,7 +29,9 @@ function countingCharacters3 (str, search) {
     }
   }
 
-  console.log("String to search in: " + str);
+/*  console.log("String to search in: " + str);
   console.log("Character(s) to find: " + search);
-  console.log("Number of times the character(s) appears: " + count);
+  console.log("Number of times the character(s) appears: " + count);*/
+
+  return count;
 }
