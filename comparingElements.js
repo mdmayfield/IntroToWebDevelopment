@@ -20,9 +20,9 @@ for (var arrayPosition = 0;
     if (currentElement !== nextElement) {
       console.log(currentElement + " is " + typeof(currentElement)); 
       console.log(nextElement  + " is " +  typeof(nextElement));
-    } else {
+    }
+  } else {
       console.log("Testing " + currentElement + " and " + nextElement +
                   "(equal to): false");
-    }
   }
 }
