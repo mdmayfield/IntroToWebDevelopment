@@ -1,7 +1,7 @@
 function clearErrors() {
   for (var loopCounter = 0;
        loopCounter < document.forms["numberFun"].elements.length;
-       loopCounter++;) {
+       loopCounter++) {
     if (document.forms["numberFun"].elements[loopCounter]
         .parentElement.className.indexOf("has-") != -1) {
       document.forms["numberFun"].elements[loopCounter]
@@ -29,6 +29,7 @@ function validateItems() {
     .parentElement.className = "form-group has-error";
     document.forms["numberFun"]["num1"].focus();
     return false;
+  }
   if (num2 == "" || isNaN(num1)) {
     alert("Num2 must be filled in with a number.");
     document.forms["numberFun"]["num2"]
