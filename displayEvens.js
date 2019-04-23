@@ -12,9 +12,9 @@ function clearErrors() {
 
 function displayEvens() {
   clearErrors();
-  var startingNumber = Number(document.forms["numberSelector"]["startingNumber"].value);
-  var endingNumber = Number(document.forms["numberSelector"]["endingNumber"].value);
-  var step = Number(document.forms["numberSelector"]["step"].value);
+  var startingNumber = document.forms["numberSelector"]["startingNumber"].value;
+  var endingNumber = document.forms["numberSelector"]["endingNumber"].value;
+  var step = document.forms["numberSelector"]["step"].value;
 
   /* Is there a way to loop over an array with a helper function, instead? */
 
@@ -27,7 +27,7 @@ function displayEvens() {
   }
 
   if (endingNumber == "" || isNaN(endingNumber) ||
-      endingNumber <= startingNumber ) {
+      Number(endingNumber) <= Number(startingNumber) ) {
     alert("Ending Number must be a number and greater than the starting number.");
     document.forms["numberSelector"]["endingNumber"]
     .parentElement.className = "form-group has-error";
@@ -35,7 +35,7 @@ function displayEvens() {
     return false;
   }
 
-  if (step == "" || isNaN(step) || step < 0) {
+  if (step == "" || isNaN(step) || Number(step) <= 0) {
     alert("Step must be a positive number.");
     document.forms["numberSelector"]["step"]
     .parentElement.className = "form-group has-error";
