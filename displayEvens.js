@@ -11,7 +11,10 @@ function clearErrors() {
 }
 
 function clearTable() {
-  /* TODO */
+  var resultTable = document.getElementById("resultTable");
+  while (resultTable.lastChild) {
+    resultTable.removeChild(resultTable.lastChild);
+  }
 }
 
 function displayEvens() {
