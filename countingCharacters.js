@@ -16,3 +16,20 @@ function countingCharacters2(stringToCount, characterToFind) {
   console.log("Number of times the character appears: " + characterCount);
 }
 
+function countingCharacters3 (str, search) {
+  var count = 0; // How many substrings in the string?
+  var numChars = search.length;
+  // Watch out for exceeding the length of the search string
+  var lastIndex = str.length - numChars;
+
+  for (var index = 0; index <= lastIndex; index++) {
+    var current = str.substring(index, index + numChars);
+    if (current == search) {
+      count++;
+    }
+  }
+
+  console.log("String to search in: " + str);
+  console.log("Character(s) to find: " + search);
+  console.log("Number of times the character(s) appears: " + count);
+}
