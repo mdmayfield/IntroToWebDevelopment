@@ -11,20 +11,28 @@ function rollDice() {
          (Math.floor(Math.random() * 6) + 1);
 }
 
+function currency(amount) {
+  /* TODO: format to currency */
+  return amount;
+}
+
 function buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll) {
-/*  console.log("start bet " + startingBet);
-  console.log("total rolls " + currentRoll);
-  console.log("highest amt " + maxMoney);
-  console.log("roll at highest " + maxMoneyRoll);*/
 
   var tableCell = document.getElementsByClassName("rtcell");
 
-  for (var i = 0; i < tableCell.length; i++) {
-    tableCell[i].innerText = String(i);
-  }
+  /*Starting Bet*/
+  tableCell[0].innerText = currency(startingBet);
+
+  /*Total Rolls Before Going Broke*/
+  tableCell[1].innerText = currentRoll;
+
+  /*Highest Amount Won*/
+  tableCell[2].innerText = currency(maxMoney);
+
+  /*Roll Count at Highest Amount Won*/
+  tableCell[3].innerText = maxMoneyRoll
 
   document.getElementById("results").style.display="block";
-
 }
 
 function playLuckySevens() {
