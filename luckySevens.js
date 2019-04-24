@@ -43,8 +43,10 @@ function playLuckySevens() {
 
   if (startingBet <= 0) {
     alert("Starting Bet must be greater than 0.");
-    document.forms["playfield"]["startingBet"].focus();
-    document.forms["playfield"]["startingBet"].select();
+    startingBetInput = document.getElementById("startingBet");
+    startingBetInput.setCustomValidity("Starting Bet must be greater than 0.");
+    startingBetInput.focus();
+    startingBetInput.select();
     return false;
   }
 
