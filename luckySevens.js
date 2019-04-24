@@ -48,6 +48,10 @@ function playLuckySevens() {
 
   buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll);
 
+  /* Change "Play" to "Play Again" */
+  var playButton = document.getElementById("playButton");
+  playButton.innerText = "Play Again";
+
   return false;
 }
 
