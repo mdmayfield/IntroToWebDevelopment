@@ -1,3 +1,10 @@
+function resetGame() {
+  var resultTable = document.getElementById("resultTable");
+  while (resultTable.lastChild) {
+    resultTable.removeChild(resultTable.lastChild);
+  }
+}
+
 function playLuckySevens() {
   var money = document.forms["playfield"]["startingBet"].value;
   console.log(money);
