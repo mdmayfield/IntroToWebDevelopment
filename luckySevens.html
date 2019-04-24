@@ -18,7 +18,7 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1 class="text-center">Lucky Sevens</h1>
+        <h1 class="text-center display-1">Lucky Sevens</h1>
       </div><!--jumbotron-->
       <form name="playfield" onsubmit="return playLuckySevens();">
         <div class="form-group clearfix text-center">
@@ -33,11 +33,11 @@
         </div>
       </form>
 
-      <div id="results" style="display:none">
+      <div id="results" style="display:none" class="text-center">
         <hr />
-        <h1 class="text-center">Results</h1>
-        <table id="resultTable">
-          <tbody>
+        <h1>Results</h1>
+        <table id="resultTable" style="display: inline-block;">
+          <tbody class="text-left">
             <tr>
               <td>Starting Bet</td>
               <td class="rtcell"></td>
