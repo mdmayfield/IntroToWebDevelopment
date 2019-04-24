@@ -34,6 +34,8 @@ function buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll) {
 }
 
 function playLuckySevens() {
+  var dieFace = ["&#x2680", "&#x2681", "&#x2682",
+                 "&#x2683", "&#x2684", "&#x2685"];
   var startingBet = Number(document.forms["playfield"]["startingBet"].value);
 
   /* This won't ordinarily be possible thanks to HMTL5 form validation, but
