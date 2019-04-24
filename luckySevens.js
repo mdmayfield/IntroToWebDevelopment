@@ -12,10 +12,19 @@ function rollDice() {
 }
 
 function buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll) {
-  console.log("start bet " + startingBet);
+/*  console.log("start bet " + startingBet);
   console.log("total rolls " + currentRoll);
   console.log("highest amt " + maxMoney);
-  console.log("roll at highest " + maxMoneyRoll);
+  console.log("roll at highest " + maxMoneyRoll);*/
+
+  var tableCell = document.getElementsByClassName("rtcell");
+
+  for (var i = 0; i < tableCell.length; i++) {
+    tableCell[i].innerText = String(i);
+  }
+
+  document.getElementById("results").style.display="block";
+
 }
 
 function playLuckySevens() {
