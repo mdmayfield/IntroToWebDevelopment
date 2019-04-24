@@ -12,8 +12,8 @@ function rollDice() {
 }
 
 function currency(amount) {
-  /* TODO: format to currency */
-  return amount;
+  return "$" + amount.toLocaleString(undefined, { style: 'decimal',
+         maximumFractionDigits : 2, minimumFractionDigits : 2 });
 }
 
 function buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll) {
