@@ -58,6 +58,15 @@ function playLuckySevens() {
     var d2 = rollD6();
     var diceValue = d1 + d2;
 
+    /* Show total number of rolls */
+    /* Show two dice w/Unicode chars in their own div */
+    /* Show current amount of money */
+    /* Show highest amount of money so far */
+
+    /* Animation speed throttle: if x milliseconds have passed, go ahead;
+     * if not, wait however long it takes to get there. Find x by trial and
+     * error */
+
     if (diceValue == 7) {
       money += 4;
     } else {
