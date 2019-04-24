@@ -48,34 +48,21 @@ function playLuckySevens() {
     return false;
   }
 
+  /* Change "Play" to "Play Again" */
+  var playButton = document.getElementById("playButton");
+  playButton.innerText = "Play Again";
+
   var money = startingBet;
   var maxMoney = money;
   var maxMoneyRoll = 0;
   var currentRoll = 0;
 
-  while (money > 0) {
+  var playOneRound = function () {
     currentRoll++;
 
     var d1 = rollD6();
     var d2 = rollD6();
     var diceValue = d1 + d2;
-
-    /* Show total number of rolls */
-    document.getElementById("rollNo").innerHTML = String(currentRoll);
-
-    /* Show two dice w/Unicode chars in their own div */
-    document.getElementById("animDice").innerHTML = String(dieFace[d1 - 1]) + 
-                                                    String(dieFace[d2 - 1]);
-
-    /* Show current amount of money */
-    document.getElementById("money").innerHTML = currency(money);
-
-    /* Show highest amount of money so far */
-    document.getElementById("maxMoney").innerHTML = currency(maxMoney);
-
-    /* Animation speed throttle: if x milliseconds have passed, go ahead;
-     * if not, wait however long it takes to get there. Find x by trial and
-     * error */
 
     if (diceValue == 7) {
       money += 4;
@@ -87,13 +74,27 @@ function playLuckySevens() {
       maxMoney = money;
       maxMoneyRoll = currentRoll;
     }
+
+    /* Update play table */
+    document.getElementById("rollNo").innerHTML = String(currentRoll);
+    document.getElementById("animDice").innerHTML = String(dieFace[d1 - 1]) + 
+                                                    String(dieFace[d2 - 1]);
+    document.getElementById("money").innerHTML = currency(money);
+    document.getElementById("maxMoney").innerHTML = currency(maxMoney);
+
+    /* If we run out of money, build the results table. If there is still
+     * money left, wait a bit then call this function again.
+     */
+
+    if (money <= 0) {
+      buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll);
+      /* todo: also re-enable the Play (Again) button */
+    } else {
+      window.setTimeout(playOneRound, 100)
+    }
   }
 
-  buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll);
-
-  /* Change "Play" to "Play Again" */
-  var playButton = document.getElementById("playButton");
-  playButton.innerText = "Play Again";
+  playOneRound();
 
   return false;
 }
