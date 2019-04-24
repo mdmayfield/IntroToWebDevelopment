@@ -5,12 +5,29 @@ function resetGame() {
   }
 }
 
+function rollDice() {
+  /* Two 6-sided dice is different from one 12-sided die! */
+  return (Math.floor(Math.random() * 6) + 1) +
+         (Math.floor(Math.random() * 6) + 1);
+}
+
 function playLuckySevens() {
   var money = document.forms["playfield"]["startingBet"].value;
-  console.log(money);
+  money = Number(money.substring(1,money.length));
 
-  realMoney = Number(money.substring(1,money.length));
-  console.log(realMoney);
+  var maxMoney = money;
+  var maxMoneyRoll = 0;
+  var currentRoll = 0;
+
+// TODO: If money <=0 error
+
+  while (money > 0) {
+    if (rollDice() == 7) {
+      money += 4;
+    } else {
+      money--;
+    }
+  }
 
   return false;
 }
