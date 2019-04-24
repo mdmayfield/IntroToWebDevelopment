@@ -36,17 +36,15 @@ function buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll) {
 }
 
 function playLuckySevens() {
-  var startingBet = document.forms["playfield"]["startingBet"].value;
-  /* Strip commas, then convert to a number type */
-  startingBet = startingBet.replace(/,/g , '');
-  startingBet = Number(startingBet.substring(1,startingBet.length));
+  var startingBet = Number(document.forms["playfield"]["startingBet"].value);
 
+  /* This won't ordinarily be possible thanks to HMTL5 form validation, but
+     check for it here anyway */
   if (startingBet <= 0) {
     alert("Starting Bet must be greater than 0.");
-/*    startingBetInput = document.getElementById("startingBet");
-    startingBetInput.setCustomValidity("Starting Bet must be greater than 0.");
+    startingBetInput = document.getElementById("startingBet");
     startingBetInput.focus();
-    startingBetInput.select();*/
+    startingBetInput.select();
     return false;
   }
 
