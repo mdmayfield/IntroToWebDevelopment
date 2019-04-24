@@ -40,13 +40,17 @@ function playLuckySevens() {
   /* Strip commas, then convert to a number type */
   startingBet = startingBet.replace(/,/g , '');
   startingBet = Number(startingBet.substring(1,startingBet.length));
-  var money = startingBet;
 
+  if (startingBet <= 0) {
+    alert("Starting Bet must be greater than 0.");
+    document.forms["playfield"]["startingBet"].focus();
+    return false;
+  }
+
+  var money = startingBet;
   var maxMoney = money;
   var maxMoneyRoll = 0;
   var currentRoll = 0;
-
-// TODO: If money <=0 error
 
   while (money > 0) {
     currentRoll++;
