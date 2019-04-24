@@ -5,10 +5,8 @@ function resetGame() {
   }
 }
 
-function rollDice() {
-  /* Two 6-sided dice is different from one 12-sided die! */
-  return (Math.floor(Math.random() * 6) + 1) +
-         (Math.floor(Math.random() * 6) + 1);
+function rollD6() {
+  return (Math.floor(Math.random() * 6) + 1);
 }
 
 function currency(amount) {
@@ -56,7 +54,11 @@ function playLuckySevens() {
   while (money > 0) {
     currentRoll++;
 
-    if (rollDice() == 7) {
+    var d1 = rollD6();
+    var d2 = rollD6();
+    var diceValue = d1 + d2;
+
+    if (diceValue == 7) {
       money += 4;
     } else {
       money--;
