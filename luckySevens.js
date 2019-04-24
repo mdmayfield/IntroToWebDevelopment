@@ -52,6 +52,12 @@ function playLuckySevens() {
   var playButton = document.getElementById("playButton");
   playButton.innerText = "Play Again";
 
+  /* Disable Play button */
+  playButton.disabled = true;
+
+  /* Make sure the Results table is hidden */
+  document.getElementById("results").style.display = "none";
+
   var money = startingBet;
   var maxMoney = money;
   var maxMoneyRoll = 0;
@@ -88,7 +94,7 @@ function playLuckySevens() {
 
     if (money <= 0) {
       buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll);
-      /* todo: also re-enable the Play (Again) button */
+      playButton.disabled = false;
     } else {
       window.setTimeout(playOneRound, 100)
     }
