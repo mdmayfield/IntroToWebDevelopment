@@ -20,6 +20,8 @@ function buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll) {
 
 function playLuckySevens() {
   var startingBet = document.forms["playfield"]["startingBet"].value;
+  /* Strip commas, then convert to a number type */
+  startingBet = startingBet.replace(/,/g , '');
   startingBet = Number(startingBet.substring(1,startingBet.length));
   var money = startingBet;
 
