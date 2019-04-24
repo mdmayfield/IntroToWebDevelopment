@@ -101,6 +101,7 @@ function playLuckySevens() {
   }
 
   playOneRound();
+  document.getElementById("animation").style.display="";
 
   return false;
 }
