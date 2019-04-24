@@ -11,9 +11,17 @@ function rollDice() {
          (Math.floor(Math.random() * 6) + 1);
 }
 
+function buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll) {
+  console.log("start bet " + startingBet);
+  console.log("total rolls " + currentRoll);
+  console.log("highest amt " + maxMoney);
+  console.log("roll at highest " + maxMoneyRoll);
+}
+
 function playLuckySevens() {
-  var money = document.forms["playfield"]["startingBet"].value;
-  money = Number(money.substring(1,money.length));
+  var startingBet = document.forms["playfield"]["startingBet"].value;
+  startingBet = Number(startingBet.substring(1,startingBet.length));
+  var money = startingBet;
 
   var maxMoney = money;
   var maxMoneyRoll = 0;
@@ -22,12 +30,21 @@ function playLuckySevens() {
 // TODO: If money <=0 error
 
   while (money > 0) {
+    currentRoll++;
+
     if (rollDice() == 7) {
       money += 4;
     } else {
       money--;
     }
+
+    if (money > maxMoney) {
+      maxMoney = money;
+      maxMoneyRoll = currentRoll;
+    }
   }
+
+  buildTable(startingBet, currentRoll, maxMoney, maxMoneyRoll);
 
   return false;
 }
